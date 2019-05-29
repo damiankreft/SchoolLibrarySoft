@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SchoolLibrary.Models;
-using System.Windows.Controls;
-using SchoolLibrary.Views;
+﻿using SchoolLibrary.Models;
 
 namespace SchoolLibrary.ViewModel
 {

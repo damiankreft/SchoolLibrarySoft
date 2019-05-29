@@ -24,7 +24,19 @@ namespace SchoolLibrary.ViewModel
         public void SearchTextBoxLostFocus(ref TextBox searchTextBox)
         {
             string defaultText = Properties.Resources.BooksView_searchBoxDefaultText;
-            searchTextBox.Text = String.IsNullOrEmpty(searchTextBox.Text) ? searchTextBox.Text = defaultText : searchTextBox.Text = searchTextBox.Text;
+            searchTextBox.Text = IsInputValid(ref searchTextBox) ? searchTextBox.Text = searchTextBox.Text : searchTextBox.Text = defaultText;
+        }
+
+        private bool IsInputValid(ref TextBox inputTextBox)
+        {
+            if (String.IsNullOrEmpty(inputTextBox.Text) || String.IsNullOrWhiteSpace(inputTextBox.Text)) return false;
+            else return true;
+        }
+
+        private bool IsInputValid(string inputText)
+        {
+            if (String.IsNullOrEmpty(inputText) || String.IsNullOrWhiteSpace(inputText)) return false;
+            else return true;
         }
 
         public void Search(ref TextBox searchTextBox, ref DataGrid gridBooks, ref List<BookModel> BooksGrid, ref ComboBox comboBox)
@@ -83,7 +95,7 @@ namespace SchoolLibrary.ViewModel
         private void SearchById(ref TextBox searchTextBox, ref DataGrid gridBooks, ref List<BookModel> BooksGrid)
         {
             string text = searchTextBox.Text;
-            if (!String.IsNullOrWhiteSpace(text) && text != Properties.Resources.BooksView_searchBoxDefaultText)
+            if (IsInputValid(text) && text != Properties.Resources.BooksView_searchBoxDefaultText)
             {
                 if (UInt32.TryParse(text, out uint _id))
                 {
@@ -96,7 +108,7 @@ namespace SchoolLibrary.ViewModel
         private void SearchByTitle(ref TextBox searchTextBox, ref DataGrid gridBooks, ref List<BookModel> BooksGrid)
         {
             string text = searchTextBox.Text;
-            if (!String.IsNullOrWhiteSpace(text) && text != Properties.Resources.BooksView_searchBoxDefaultText)
+            if (IsInputValid(text) && text != Properties.Resources.BooksView_searchBoxDefaultText)
             {
                 BooksGrid = Database.Database.Instance.Table<BookModel>().ToListAsync().Result;
                 BooksGrid = BooksGrid.Where(i => i.Title.Contains(text)).ToList();
@@ -106,7 +118,7 @@ namespace SchoolLibrary.ViewModel
         private void SearchByAuthor(ref TextBox searchTextBox, ref DataGrid gridBooks, ref List<BookModel> BooksGrid)
         {
             string text = searchTextBox.Text;
-            if (!String.IsNullOrWhiteSpace(text) && text != Properties.Resources.BooksView_searchBoxDefaultText)
+            if (IsInputValid(text) && text != Properties.Resources.BooksView_searchBoxDefaultText)
             {
                 BooksGrid = Database.Database.Instance.Table<BookModel>().ToListAsync().Result;
                 BooksGrid = BooksGrid.Where(i => i.Author.Contains(text)).ToList();
@@ -115,12 +127,11 @@ namespace SchoolLibrary.ViewModel
         }
         private void SearchByReleaseDate(ref TextBox searchTextBox, ref DataGrid gridBooks, ref List<BookModel> BooksGrid)
         {
-            if (!string.IsNullOrWhiteSpace(searchTextBox.Text) && searchTextBox.Text != Properties.Resources.BooksView_searchBoxDefaultText)
+            if (IsInputValid(searchTextBox.Text) && searchTextBox.Text != Properties.Resources.BooksView_searchBoxDefaultText)
             {
                 if (Int32.TryParse(searchTextBox.Text, out int _releaseYear))
                 {
                     BooksGrid = Database.Database.Instance.Table<BookModel>().Where(i => i.ReleaseYear == _releaseYear).ToListAsync().Result;
-                    //BooksGrid = BooksGrid.Where(i => i.ReleaseYear == _releaseYear).ToList();
                     gridBooks.ItemsSource = BooksGrid;
                 }
             }
@@ -128,7 +139,7 @@ namespace SchoolLibrary.ViewModel
         private void SearchByPublisher(ref TextBox searchTextBox, ref DataGrid gridBooks, ref List<BookModel> BooksGrid)
         {
             string text = searchTextBox.Text;
-            if (!String.IsNullOrWhiteSpace(text) && text != Properties.Resources.BooksView_searchBoxDefaultText)
+            if (IsInputValid(text) && text != Properties.Resources.BooksView_searchBoxDefaultText)
             {
                 BooksGrid = Database.Database.Instance.Table<BookModel>().ToListAsync().Result;
                 BooksGrid = BooksGrid.Where(i => i.Publisher.Contains(text)).ToList();

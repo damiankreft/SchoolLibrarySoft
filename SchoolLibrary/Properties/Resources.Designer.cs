@@ -160,6 +160,24 @@ namespace SchoolLibrary.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Warning!.
+        /// </summary>
+        public static string RemoveBookViewModel_removeCaption {
+            get {
+                return ResourceManager.GetString("RemoveBookViewModel_removeCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to delete selected book?.
+        /// </summary>
+        public static string RemoveBookViewModel_removeWarningMessage {
+            get {
+                return ResourceManager.GetString("RemoveBookViewModel_removeWarningMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
         public static byte[] SchoolLibrary {

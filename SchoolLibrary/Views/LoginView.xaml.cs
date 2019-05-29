@@ -15,6 +15,7 @@ namespace SchoolLibrary.Views
 
         private void ProcessLogonButton_Click(object sender, RoutedEventArgs e)
         {
+
             UserModel user = null;
             if (!String.IsNullOrEmpty(usernameTextBox.Text) || !String.IsNullOrEmpty(passwordTextBox.Text))
             {

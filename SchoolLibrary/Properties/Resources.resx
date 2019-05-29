@@ -154,4 +154,10 @@
   <data name="SchoolLibrary" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SchoolLibrary.db3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="RemoveBookViewModel_removeCaption" xml:space="preserve">
+    <value>Warning!</value>
+  </data>
+  <data name="RemoveBookViewModel_removeWarningMessage" xml:space="preserve">
+    <value>Are you sure you want to delete selected book?</value>
+  </data>
 </root>

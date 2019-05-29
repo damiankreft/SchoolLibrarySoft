@@ -32,15 +32,14 @@ namespace SchoolLibrary.ViewModel
 
         private static void _removeCancel()
         {
-            // another debuggig method
             //Console.WriteLine("Selected 'cancel'.");
         }
 
         private static void _RemoveWarningMessage(TextBox textBox)
         {
             // Put this into new ViewModel
-            string messageBoxText = "Are you sure you want to delete selected book?"; // Hard-coded strings to resources <---
-            string caption = "Warning!"; // Hard-coded strings to resources <---
+            string messageBoxText = SchoolLibrary.Properties.Resources.RemoveBookViewModel_removeWarningMessage; // Hard-coded strings to resources <---
+            string caption = SchoolLibrary.Properties.Resources.RemoveBookViewModel_removeCaption; // Hard-coded strings to resources <---
             MessageBoxButton button = MessageBoxButton.YesNoCancel;
             MessageBoxImage icon = MessageBoxImage.Warning;
             MessageBoxResult MsgBoxResult = MessageBox.Show(messageBoxText, caption, button, icon);

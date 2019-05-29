@@ -9,27 +9,40 @@ using System.IO;
 namespace SchoolLibrary.Database
 {
     public sealed class Database : SQLiteAsyncConnection
-    {
+    {       
         private static Database database = null;
-        public Database(string databasePath) : base(databasePath, false) { }
+        //public Database(string databasePath) : base(databasePath, false) { }
+        public readonly string myDocumentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/SchoolLibrary.db3";
+        public Database(string dbPath) : base(dbPath, false) { }
 
         public static Database Instance
         {
             get
             {
-                if (database == null)
+                try
                 {
-                    if (File.Exists(Properties.Settings.Default.DatabaseFileLocation))
+                    if (database == null)
                     {
-                        database = new Database(Properties.Settings.Default.DatabaseFileLocation);
-                        database.CreateTableAsync<BookModel>().Wait();
-                        database.CreateTableAsync<UserModel>().Wait();
+                        if (File.Exists(Properties.Settings.Default.DatabaseFileLocation))
+                        {
+                            database = new Database(Properties.Settings.Default.DatabaseFileLocation);
+                            database.CreateTableAsync<BookModel>().Wait();
+                            database.CreateTableAsync<UserModel>().Wait();
+                        }
+                        else
+                        {
+                            database = new Database(Properties.Settings.Default.DatabaseFileLocation);
+                            database.CreateTableAsync<BookModel>();
+                            database.CreateTableAsync<UserModel>().Wait();
+                            SaveUserAsync(new UserModel() { Id = 0, AccessLevel = 3, Password = "admin", Username = "admin" });
+                            SaveUserAsync(new UserModel() { Id = 1, AccessLevel = 0, Password = "user", Username = "user" });
+                        }
                     }
-                    else
-                    {
-                        database = new Database(Properties.Settings.Default.DatabaseFileLocation);
-                        database.CreateTableAsync<BookModel>();
-                    }
+                }
+                catch(Exception e)
+                {
+                    Console.WriteLine(e.Message + "\n");
+                    Console.WriteLine(e.StackTrace);
                 }
                 return database;
             }
@@ -106,25 +119,6 @@ namespace SchoolLibrary.Database
         public Task RemoveItemAsync(uint id)
         {
             return Instance.Table<BookModel>().Where(i => i.Id == id).DeleteAsync();
-        }
-
-        // Just an another method to provide tests of base functionalities.
-        // debug
-        public void DisplayBooksInfo()
-        {
-            var list_Result = GetItemsAsync();
-            for (int i = 0; i < list_Result.Result.Count; i++)
-            {
-                Console.WriteLine("#########################################");
-                Console.WriteLine(list_Result.Result[i].Id);
-                Console.WriteLine(list_Result.Result[i].IsAvailable);
-                Console.WriteLine(list_Result.Result[i].Publisher);
-                Console.WriteLine(list_Result.Result[i].ReleaseYear);
-                Console.WriteLine(list_Result.Result[i].Title);
-                Console.WriteLine(list_Result.Result[i].Author);
-                Console.WriteLine("#########################################");
-
-            }
         }
     }
 }
