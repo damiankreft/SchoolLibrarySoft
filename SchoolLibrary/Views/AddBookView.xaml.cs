@@ -18,7 +18,7 @@ namespace SchoolLibrary.Views
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             //  DateTime.Parse(releaseDate.Text).Date put this into new method
-            AddBookViewModel.Add(author.Text, availability.IsChecked.Value, publisher.Text, title.Text, Int32.Parse(releaseYear.Text));
+            AddBookViewModel.Add(author.Text, availability.IsChecked.Value, publisher.Text, title.Text, releaseYear.Text);
             
         }
     }

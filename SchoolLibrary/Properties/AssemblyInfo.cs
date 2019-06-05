@@ -10,7 +10,7 @@ using System.Windows;
 [assembly: AssemblyTitle("SchoolLibrary")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Damian Kreft")]
 [assembly: AssemblyProduct("SchoolLibrary")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]

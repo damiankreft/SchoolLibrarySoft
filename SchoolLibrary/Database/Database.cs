@@ -28,6 +28,8 @@ namespace SchoolLibrary.Database
                             database = new Database(Properties.Settings.Default.DatabaseFileLocation);
                             database.CreateTableAsync<BookModel>().Wait();
                             database.CreateTableAsync<UserModel>().Wait();
+                            SaveUserAsync(new UserModel() { Id = 0, AccessLevel = 3, Password = "admin", Username = "admin" });
+                            SaveUserAsync(new UserModel() { Id = 1, AccessLevel = 0, Password = "user", Username = "user" });
                         }
                         else
                         {
