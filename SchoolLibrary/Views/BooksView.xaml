@@ -12,8 +12,8 @@
     <ScrollViewer MinHeight="450" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,0">
         <Grid Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" MinWidth="164"  />
-                <ColumnDefinition Width="Auto" MinWidth="786" />
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
