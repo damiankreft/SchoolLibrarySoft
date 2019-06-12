@@ -5,32 +5,29 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:views="clr-namespace:SchoolLibrary.Views"
              xmlns:viewmodels="clr-namespace:SchoolLibrary.ViewModel"
-             mc:Ignorable="d" d:DesignWidth="800" Height="222">
+             mc:Ignorable="d">
     <UserControl.Resources>
         <DataTemplate x:Name="booksViewTemplate" DataType="{x:Type viewmodels:BooksViewModel}">
             <views:BooksView DataContext="{Binding}"></views:BooksView>
         </DataTemplate>
     </UserControl.Resources>
-    <Grid Background="#b2b2b2" HorizontalAlignment="Center" Margin="320,0">
+    <Grid Background="#b2b2b2" Width="220" Height="175" HorizontalAlignment="Center" VerticalAlignment="Center">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="100" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <Label Grid.Row="0">Logon to User Control Panel</Label>
-        <Label Grid.Row="1">Username</Label>
-        <TextBox x:Name="usernameTextBox" Grid.Row="2"></TextBox>
-        <Label Grid.Row="3">Password</Label>
-        <TextBox x:Name="passwordTextBox" Grid.Row="4"></TextBox>
-        <Button x:Name="ProcessLogonButton" Grid.Row="6" Height="29" Width="Auto" Margin="0,11,0,-39" Click="ProcessLogonButton_Click">Logon</Button>
-        <UserControl DataContext="{Binding}"></UserControl>
+        <Label Grid.Row="0" Foreground="#FFFD0D0D" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontWeight="Bold" FontSize="48" FontFamily="Vladimir Script" Padding="10,0,10,0">Libris</Label>
+        <Label Grid.Row="1" Padding="10,0,0,0" FontFamily="Lucida Fax">Username</Label>
+        <TextBox x:Name="usernameTextBox" Grid.Row="1" Grid.Column="1" Padding="0,0,10,0"></TextBox>
+        <Label Grid.Row="2" Padding="10,0,0,0" FontFamily="Lucida Fax">Password</Label>
+        <TextBox x:Name="passwordTextBox" Grid.Row="2" Grid.Column="1" Padding="0,0,10,0"></TextBox>
+        <Button x:Name="ProcessLogonButton" Grid.Row="3" Grid.ColumnSpan="2" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ProcessLogonButton_Click" Padding="10,0,10,0">Logon</Button>
+        <UserControl DataContext="{Binding}" Foreground="Black"></UserControl>
     </Grid>
 </UserControl>
