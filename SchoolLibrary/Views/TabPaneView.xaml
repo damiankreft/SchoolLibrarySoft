@@ -10,17 +10,17 @@
     <Grid>
         <TabControl MinWidth="950">
             <TabItem Header="Remove book">
-                <Grid Background="#FFE5E5E5" Width="Auto">
+                <Grid Width="Auto">
                     <Views:RemoveBookView></Views:RemoveBookView>
                 </Grid>
             </TabItem>
             <TabItem Header="Add book">
-                <Grid Background="#FFE5E5E5">
+                <Grid>
                     <Views:AddBookView></Views:AddBookView>
                 </Grid>
             </TabItem>
             <TabItem Header="Edit book">
-                <Grid Background="#FFE5E5E5">
+                <Grid>
                     <Views:EditBookView></Views:EditBookView>
                 </Grid>
             </TabItem>

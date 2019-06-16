@@ -10,12 +10,12 @@
     <Grid>
         <TabControl MinWidth="950">
             <TabItem Header="Borrow book">
-                <Grid Background="#FFE5E5E5" Width="Auto">
+                <Grid Width="Auto">
                     <Views:BorrowBook></Views:BorrowBook>
                 </Grid>
             </TabItem>
             <TabItem Header="Return book">
-                <Grid Background="#FFE5E5E5">
+                <Grid>
                     <Views:ReturnBook></Views:ReturnBook>
                 </Grid>
             </TabItem>

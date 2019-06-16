@@ -45,7 +45,7 @@
                 <ComboBoxItem x:Name="ComboBoxAvailabilityAvailable" Content="{x:Static p:Resources.BooksView_AvailabilityAvailable}"/>
                 <ComboBoxItem x:Name="ComboBoxAvailabilityUnavailable" Content="{x:Static p:Resources.BooksView_AvailabilityUnavailable}"/>
             </ComboBox>
-            <Views:TabPaneView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,0,0"/>
+            <Views:TabPaneView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,1,0,0" Height="218" VerticalAlignment="Bottom" />
         </Grid>
     </ScrollViewer>
 </UserControl>

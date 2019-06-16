@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:SchoolLibrary.Views"
              mc:Ignorable="d" d:DesignWidth="500" Height="189">
-    <Grid Background="#b2b2b2" Height="189">
+    <Grid Height="189">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" />
