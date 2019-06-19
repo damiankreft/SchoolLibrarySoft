@@ -70,6 +70,7 @@ namespace SchoolLibrary.ViewModel
             // Escapes the scale of switch-case instruction to call default case.
             searchOptions.SelectedIndex = -1;
             searchTextBox.Text = Properties.Resources.BooksView_searchBoxDefaultText;
+            // test twefewfwsdfadfsadfdwas
         }
 
         public void Return(string id)
