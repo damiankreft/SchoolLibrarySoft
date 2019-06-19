@@ -46,6 +46,7 @@
                 <ComboBoxItem x:Name="ComboBoxAvailabilityUnavailable" Content="{x:Static p:Resources.BooksView_AvailabilityUnavailable}"/>
             </ComboBox>
             <Views:TabPaneView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,1,0,0" Height="218" VerticalAlignment="Bottom" />
+            <Button Content="X" Grid.Column="1" HorizontalAlignment="Left" Height="28" Margin="386,9,0,0" VerticalAlignment="Top" Width="20" Click="X_Click"/>
         </Grid>
     </ScrollViewer>
 </UserControl>

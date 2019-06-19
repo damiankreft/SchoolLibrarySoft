@@ -4,9 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:SchoolLibrary.Views"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+             mc:Ignorable="d" d:DesignWidth="800">
+    <Grid Height="Auto">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" />
@@ -23,7 +22,7 @@
         </Grid.RowDefinitions>
         <Label Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center">Enter id of the book you want to edit.</Label>
         <Label Grid.Row="1" Margin="0,0,5,7">Id:</Label>
-        <TextBox x:Name="id" Grid.Row="1" Margin="0,0,5,10" TextWrapping="Wrap" RenderTransformOrigin="0.489,-0.364" Grid.Column="1"/>
+        <TextBox x:Name="id" Grid.Row="1" Margin="0,0,5,10" TextWrapping="Wrap" Grid.Column="1"/>
         <Label Grid.Row="2">Title:</Label>
         <TextBox x:Name="title" Grid.Row="2" Grid.Column="1" Margin="0,0,5,10" TextWrapping="Wrap"/>
         <Label Grid.Row="3">Author:</Label>
@@ -33,7 +32,7 @@
         <Label Grid.Row="5">Publisher:</Label>
         <TextBox x:Name="publisher" Grid.Row="5" Grid.Column="1" Margin="0,0,5,10" TextWrapping="Wrap"/>
         <Label Grid.Row="6">Availability:</Label>
-        <CheckBox x:Name="availability" Grid.Row="6" Grid.Column="1" Margin="5,6,-5,26" Grid.RowSpan="2" />
-        <Button Grid.Row="7" Grid.ColumnSpan="2" Height="20" Width="230" Margin="35,11,35,0" VerticalAlignment="Top" Click="Button_Click">Apply changes</Button>
+        <CheckBox x:Name="availability" Grid.Row="6" Grid.Column="1" Margin="0,0,5,10" Grid.RowSpan="2" />
+        <Button Grid.Row="7" Grid.ColumnSpan="2" Width="50"  VerticalAlignment="Top" Click="Button_Click">Apply</Button>
     </Grid>
 </UserControl>

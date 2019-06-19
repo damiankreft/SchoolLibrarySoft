@@ -54,5 +54,10 @@ namespace SchoolLibrary.Views
             else
                 return;
         }
+
+        private void X_Click(object sender, RoutedEventArgs e)
+        {
+            BooksViewModel.ClearSearch(searchTextBox, SearchOptionsComboBox);
+        }
     }
 }

@@ -7,7 +7,7 @@
         xmlns:viewmodels="clr-namespace:SchoolLibrary.ViewModel"
         xmlns:views="clr-namespace:SchoolLibrary.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="Auto" Width="Auto" MinHeight="554" MinWidth="1054" WindowStartupLocation="CenterScreen" WindowState="Normal" WindowStyle="SingleBorderWindow" >
+        Title="MainWindow" Height="Auto" Width="Auto" WindowStartupLocation="CenterScreen" WindowState="Normal" WindowStyle="ThreeDBorderWindow" >
     <Window.Resources>
         <DataTemplate x:Name="loginViewTemplate" DataType="{x:Type viewmodels:LoginViewModel}">
             <views:LoginView DataContext="{Binding}"></views:LoginView>
