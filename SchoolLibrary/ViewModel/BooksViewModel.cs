@@ -64,6 +64,14 @@ namespace SchoolLibrary.ViewModel
             }
         }
 
+        public void ClearSearch(TextBox searchTextBox, ComboBox searchOptions)
+        {
+            searchOptions.ToolTip = "Select search mode specyfiing how data will be filtered.";
+            // Escapes the scale of switch-case instruction to call default case.
+            searchOptions.SelectedIndex = -1;
+            searchTextBox.Text = Properties.Resources.BooksView_searchBoxDefaultText;
+        }
+
         public void Return(string id)
         {
             BookModel book = null;
