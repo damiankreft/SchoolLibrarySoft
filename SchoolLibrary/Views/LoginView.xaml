@@ -13,8 +13,8 @@
     </UserControl.Resources>
     <Grid Background="#FFE5E5E5" Width="220" Height="175" HorizontalAlignment="Center" VerticalAlignment="Center">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100" />
-            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="82" />
+            <ColumnDefinition Width="138" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="75"/>
@@ -22,12 +22,13 @@
             <RowDefinition Height="25"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <Label Grid.Row="0" Foreground="#FFFD0D0D" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontWeight="Bold" FontSize="48" FontFamily="Vladimir Script" Padding="10,0,10,0">Libris</Label>
-        <Label Grid.Row="1" Padding="10,0,0,0" FontFamily="Lucida Fax">Username</Label>
-        <TextBox x:Name="usernameTextBox" Grid.Row="1" Grid.Column="1" Padding="0,0,10,0"></TextBox>
-        <Label Grid.Row="2" Padding="10,0,0,0" FontFamily="Lucida Fax">Password</Label>
-        <TextBox x:Name="passwordTextBox" Grid.Row="2" Grid.Column="1" Padding="0,0,10,0"></TextBox>
-        <Button x:Name="ProcessLogonButton" Grid.Row="3" Grid.ColumnSpan="2" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ProcessLogonButton_Click" Padding="10,0,10,0">Logon</Button>
+        <Label Grid.Row="0" Foreground="#FFFD0D0D" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontWeight="Bold" FontSize="48" FontFamily="Vladimir Script" Padding="10,0,10,0" Margin="46,0" Width="128">Libris</Label>
+        <Label Grid.Row="1" Padding="10,0,0,0" FontFamily="Lucida Fax" Margin="0,5,0,20" Grid.RowSpan="2">Username: </Label>
+        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="usernameTextBox" Grid.Row="1" Padding="0,0,10,0" Margin="0,3,37,2" Width="101" Grid.Column="1"/>
+        <Label Grid.Row="2" Padding="10,0,0,0" FontFamily="Lucida Fax" Margin="0,5,0,45" Grid.RowSpan="2">Password: </Label>
+        <PasswordBox HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="passwordBox" Grid.Row="2" Grid.Column="1" Width="101" Height="20" Margin="0,3,0,0"/>
+        <Button x:Name="ProcessLogonButton" Grid.Row="3" Grid.ColumnSpan="2" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ProcessLogonButton_Click" Padding="10,0,10,0" Height="18" Margin="60,16">Logon</Button>
         <UserControl DataContext="{Binding}" Foreground="Black"></UserControl>
+
     </Grid>
 </UserControl>
