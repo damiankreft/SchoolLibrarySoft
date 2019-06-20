@@ -15,7 +15,7 @@ namespace SchoolLibrary.Views
 
         private void ProcessLogonButton_Click(object sender, RoutedEventArgs e)
         {
-            LoginViewModel.Logon(usernameTextBox.Text, passwordTextBox.Text);
+            LoginViewModel.Logon(usernameTextBox.Text, passwordBox.Password);
         }
     }
 }
